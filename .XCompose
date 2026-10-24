@@ -1,0 +1,219 @@
+include "%L"    # make sure we can still access existing compose symbols
+
+# X11 doesnt have a keysym for most of these symbols :/ so ive stopped looking
+# this list is not complete so feel free to add new entries if you need them
+
+# ABBREVIATIONS
+
+# compose sequences are based on the name of the phoneme each symbol
+# represents and is usually abbreviated to the first letter of each word
+#
+# since the ipa chart im basing this on calls them plosives and not stops
+# im using the term plosive as well, except for the glottal stop which
+# has sequences for Glottal Stop and Glottal Plosive
+#
+# terms starting with the same letter in the same position in the sequence
+# are differentiated by capitalisation
+#
+# since theres a lot of placements starting with `p' pharyngeal is represented
+# with `f' based on its pronounciation
+#
+#   TERM            LETTER  TERM            LETTER  TERM            LETTER
+#   ----------------------  ----------------------  ----------------------
+#   voiceless       v       voiced          V       bilabial        b
+#   labiodental     l       dental          d       alveolar        a
+#   postalveolar    P       retroflex       r       palatal         p
+#   velar           v       uvular          u       pharyngeal      f
+#   glottal         g       plosive         p       stop            s
+#   nasal           n       trill           t       tap             T
+#   flap            F       fricative       f       lateral         l
+#   approximant     a       click           c       close           c
+#   front           f       rounded         r       near            n
+#   mid             m       open            o       central         c
+#   back            b       unrounded       u
+#   
+
+##############################################################################
+# CONSONANTS (PULMONIC)
+##############################################################################
+
+# PLOSIVES
+
+<Multi_key> <v> <b> <p>     :   "p"     # Voiceless Bilabial Plosive
+<Multi_key> <V> <b> <p>     :   "b"     # Voiced Bilabial Plosive
+<Multi_key> <v> <a> <p>     :   "t"     # Voiceless Alveolar Plosive
+<Multi_key> <V> <a> <p>     :   "d"     # Voiced Alveolar Plosive
+<Multi_key> <v> <r> <p>     :   "ʈ"     # Voiceless Retroflex Plosive
+<Multi_key> <V> <r> <p>     :   "ɖ"     # Voiced Retroflex Plosive
+<Multi_key> <v> <p> <p>     :   "c"     # Voiceless Palatal Plosive
+<Multi_key> <V> <p> <p>     :   "ɟ"     # Voiced Palatal Plosive
+<Multi_key> <v> <v> <p>     :   "k"     # Voiceless Velar Plosive
+<Multi_key> <V> <v> <p>     :   "g"     # Voiced Velar Plosive
+<Multi_key> <v> <u> <p>     :   "q"     # Voiceless Uvular Plosive
+<Multi_key> <V> <u> <p>     :   "ɢ"     # Voiced Uvular Plosive
+<Multi_key> <g> <p>         :   "ʔ"     # Glottal Plosive
+<Multi_key> <g> <s>         :   "ʔ"     # Glottal Stop
+
+# NASALS
+
+<Multi_key> <V> <b> <n>     :   "m"     # Voiced Bilabial Nasal
+<Multi_key> <V> <l> <n>     :   "ɱ"     # Voiced Labiodental Nasal
+<Multi_key> <V> <a> <n>     :   "n"     # Voiced Alveolar Nasal
+<Multi_key> <V> <r> <n>     :   "ɳ"     # Voiced Retroflex Nasal
+<Multi_key> <V> <p> <n>     :   "ɲ"     # Voiced Palatal Nasal
+<Multi_key> <V> <v> <n>     :   "ŋ"     # Voiced Velar Nasal
+<Multi_key> <V> <u> <n>     :   "ɴ"     # Voiced Uvular Nasal
+
+# TRILLS
+
+<Multi_key> <V> <b> <t>     :   "ʙ"     # Voiced Bilabial Trill
+<Multi_key> <V> <a> <t>     :   "r"     # Voiced Alveolar Trill
+<Multi_key> <V> <u> <t>     :   "ʀ"     # Voiced Uvular Trill
+
+# FLAPS/TAPS
+
+<Multi_key> <V> <l> <F>     :   "ⱱ"     # Voiced Labiodental Flap
+<Multi_key> <V> <a> <F>     :   "ɾ"     # Voiced Alveolar Flap
+<Multi_key> <V> <a> <T>     :   "ɾ"     # Voiced Alveolar Tap
+<Multi_key> <V> <r> <F>     :   "ɽ"     # Voiced Retroflex Flap
+
+# FRICATIVES
+
+<Multi_key> <v> <b> <f>     :   "ɸ"     # Voiceless Bilabial Fricative
+<Multi_key> <V> <b> <f>     :   "β"     # Voiced Bilabial Fricative
+<Multi_key> <v> <l> <f>     :   "f"     # Voiceless Labiodental Fricative
+<Multi_key> <V> <l> <f>     :   "v"     # Voiced Labiodental Fricative
+<Multi_key> <v> <d> <f>     :   "θ"     # Voiceless Dental Fricative
+<Multi_key> <V> <d> <f>     :   "ð"     # Voiced Dental Fricative
+<Multi_key> <v> <a> <f>     :   "s"     # Voiceless Alveolar Fricative
+<Multi_key> <V> <a> <f>     :   "z"     # Voiced Alveolar Fricative
+<Multi_key> <v> <P> <f>     :   "ʃ"     # Voiceless Postalveolar Fricative
+<Multi_key> <V> <P> <f>     :   "ʒ"     # Voiced Postalveolar Fricative
+<Multi_key> <v> <r> <f>     :   "ʂ"     # Voiceless Retroflex Fricative
+<Multi_key> <V> <r> <f>     :   "ʐ"     # Voiced Retroflex Fricative
+<Multi_key> <v> <p> <f>     :   "ç"     # Voiceless Palatal Fricative
+<Multi_key> <V> <p> <f>     :   "ʝ"     # Voiced Palatal Fricative
+<Multi_key> <v> <v> <f>     :   "x"     # Voiceless Velar Fricative
+<Multi_key> <V> <v> <f>     :   "ɣ"     # Voiced Velar Fricative
+<Multi_key> <v> <u> <f>     :   "χ"     # Voiceless Uvular Fricative
+<Multi_key> <V> <u> <f>     :   "ʁ"     # Voiced Uvular Fricative
+<Multi_key> <v> <f> <f>     :   "ħ"     # Voiceless Pharyngeal Fricative
+<Multi_key> <V> <f> <f>     :   "ʕ"     # Voiced Pharyngeal Fricative
+<Multi_key> <v> <g> <f>     :   "h"     # Voiceless Glottal Fricative
+<Multi_key> <V> <g> <f>     :   "ɦ"     # Voiced Glottal Fricative
+
+# LATERAL FRICATIVES
+
+<Multi_key> <v> <a> <l> <f> :   "ɬ"     # Voiceless Alveolar Lateral Fricative
+<Multi_key> <V> <a> <l> <f> :   "ɮ"     # Voiced Alveolar Lateral Fricative
+
+# APPROXIMANTS
+
+<Multi_key> <V> <l> <a>     :   "ʋ"     # Voiced Labiodental Approximant
+<Multi_key> <V> <a> <a>     :   "ɹ"     # Voiced Alveolar Approximant
+<Multi_key> <V> <r> <a>     :   "ɻ"     # Voiced Retroflex Approximant
+<Multi_key> <V> <p> <a>     :   "j"     # Voiced Palatal Approximant
+<Multi_key> <V> <v> <a>     :   "ɰ"     # Voiced Velar Approximant
+
+# LATREAL APPROXIMANTS
+
+<Multi_key> <V> <l> <a> <a> :   "l"     # Voiced Alveolar Lateral Approximant
+<Multi_key> <V> <l> <r> <a> :   "ɭ"     # Voiced Retroflex Lateral Approximant
+<Multi_key> <V> <l> <p> <a> :   "ʎ"     # Voiced Palatal Lateral Approximant
+<Multi_key> <V> <l> <v> <a> :   "ʟ"     # Voiced Velar Lateral Approximant
+
+##############################################################################
+# CONSONANTS (NON-PULMONIC)
+##############################################################################
+
+# CLICKS
+
+<Multi_key> <b> <c>         :   "ʘ"     # Bilabial Click
+<Multi_key> <d> <c>         :   "ǀ"     # Dental Click
+<Multi_key> <P> <c>         :   "ǃ"     # Postalveolar Click
+<Multi_key> <p> <c>         :   "ǂ"     # Palatoalveolar Click
+<Multi_key> <a> <l> <c>     :   "ǁ"     # Alveolar Lateral Click
+
+# VOICED IMPLOSIVES
+
+<Multi_key> <V> <b> <i>     :   "ɓ"     # Voiced Bilabial Implosive
+<Multi_key> <V> <d> <i>     :   "ɗ"     # Voiced Dental Implosive
+<Multi_key> <V> <a> <i>     :   "ɗ"     # Voiced Alveolar Implosive
+<Multi_key< <V> <p> <i>     :   "ʄ"     # Voiced Palatal Implosive
+<Multi_key> <V> <v> <i>     :   "ɠ"     # Voiced Velar Implosive
+<Multi_key> <V> <u> <i>     :   "ʛ"     # Voiced Uvular Implosive
+
+# EJECTIVES
+
+# ' modified with apostrophe
+
+##############################################################################
+# OTHER SYMBOLS
+##############################################################################
+
+<Multi_key> <v> <l> <v> <f> :   "ʍ"     # Voiceless Labial-Velar Fricative
+<Multi_key> <V> <l> <v> <a> :   "w"     # Voiced Labial-Velar Approximant
+<Multi_key> <V> <l> <p> <a> :   "ɥ"     # Voiced Labial-Palatal Approximant
+<Multi_key> <v> <e> <f>     :   "ʜ"     # Voiceless Epiglottal Fricative
+<Multi_key> <V> <e> <f>     :   "ʢ"     # Voiced Epiglottal Fricative
+<Multi_key> <e> <p>         :   "ʡ"     # Epiglottal Plosive
+<Multi_key> <f> <p>         :   "ʡ"     # Pharyngeal Plosive
+<Multi_key> <v> <a> <p> <f> :   "ɕ"     # Voiceless Alveolo-Palatal Fricative
+<Multi_key> <V> <a> <p> <f> :   "ʑ"     # Voiced Alveolo-Palatal Fricative
+<Multi_key> <V> <a> <l> <F> :   "ɺ"     # Voiced Alveolar Lateral Flap
+
+##############################################################################
+# VOWELS 
+##############################################################################
+
+<Multi_key> <c> <f> <u>     :   "i"     # Close Front Unrounded Vowel
+<Multi_key> <c> <f> <r>     :   "y"     # Close Front Rounded Vowel
+<Multi_key> <c> <c> <u>     :   "ɨ"     # Close Central Unrounded Vowel
+<Multi_key> <c> <c> <r>     :   "ʉ"     # Close Central Rounded Vowel
+<Multi_key> <c> <b> <u>     :   "ɯ"     # Close Back Unrounded Vowel
+<Multi_key> <c> <b> <r>     :   "u"     # Close Back Rounded Vowel
+<Multi_key> <c> <m> <f> <u> :   "e"     # Close-Mid Front Unrounded Vowel
+<Multi_key> <c> <m> <f> <r> :   "ø"     # Close-Mid Front Rounded Vowel
+<Multi_key> <c> <m> <c> <u> :   "ɘ"     # Close-Mid Central Unrounded Vowel
+<Multi_key> <c> <m> <c> <r> :   "ɵ"     # Close-Mid Central Rounded Vowel
+<Multi_key> <c> <m> <b> <u> :   "ɤ"     # Close-Mid Back Unrounded Vowel
+<Multi_key> <c> <m> <b> <r> :   "o"     # Close-Mid Back Rounded Vowel
+<Multi_key> <m> <c>         :   "ə"     # Mid Central Vowel
+<Multi_key> <o> <m> <f> <u> :   "ɛ"     # Open-Mid Front Unrounded Vowel
+<Multi_key> <o> <m> <f> <r> :   "œ"     # Open-Mid Front Rounded Vowel
+<Multi_key> <o> <m> <c> <u> :   "ɜ"     # Open-Mid Central Unrounded Vowel
+<Multi_key> <o> <m> <c> <r> :   "ɞ"     # Open-Mid Central Rounded Vowel
+<Multi_key> <o> <m> <b> <u> :   "ʌ"     # Open-Mid Back Unrounded Vowel
+<Multi_key> <o> <m> <b> <r> :   "ɔ"     # Open-Mid Back Rounded Vowel
+<Multi_key> <o> <f> <u>     :   "a"     # Open Front Unrounded Vowel
+<Multi_key> <o> <f> <r>     :   "ɶ"     # Open Front Rounded Vowel
+<Multi_key> <o> <b> <u>     :   "ɑ"     # Open Back Unrounded Vowel
+<Multi_key> <o> <b> <r>     :   "ɒ"     # Open Back Rounded Vowel
+
+# Near-Close Near-Front Unrounded Vowel
+<Multi_key> <n> <c> <n> <f> <u> :   "ɪ"
+
+# Near-Close Near-Front Rounded Vowel
+<Multi_key> <n> <c> <n> <f> <r> :   "ʏ"
+
+# Near-Close Near-Back Rounded Vowel
+<Multi_key> <n> <c> <n> <b> <r> :   "ʊ"
+
+# Near-Open Front Unrounded Vowel
+<Multi_key> <n> <o> <f> <u>     :   "æ"
+
+# Near-Open Central Vowel
+<Multi_key> <n> <o> <c>         :   "ɐ"
+
+##############################################################################
+# SUPRASEGMENTALS 
+##############################################################################
+
+##############################################################################
+# TONES AND WORD ACCENTS
+##############################################################################
+
+##############################################################################
+# DIACRITICS
+##############################################################################
+
